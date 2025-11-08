@@ -10,47 +10,47 @@ Ideal for MVPs, prototypes, or simple applications with limited functionality.
 
 ```
 src/
-├── app/
-│   ├── (app)/
-│   │   ├── dashboard/
-│   │   │   └── page.tsx
-│   │   ├── settings/
-│   │   │   └── page.tsx
-│   │   └── layout.tsx
-│   ├── (auth)/
-│   │   ├── login/
-│   │   │   └── page.tsx
-│   │   ├── sign-up/
-│   │   │   └── page.tsx
-│   │   └── layout.tsx
-│   ├── api/
-│   │   └── auth/
-│   │       └── [...all]/
-│   │           └── route.ts
-│   ├── layout.tsx
-│   └── globals.css
+├── app/                          # Next.js App Router directory (routing & pages)
+│   ├── (app)/                    # Route group for authenticated app pages
+│   │   ├── dashboard/            # Dashboard page route
+│   │   │   └── page.tsx          # Dashboard page component
+│   │   ├── settings/             # Settings page route
+│   │   │   └── page.tsx          # Settings page component
+│   │   └── layout.tsx            # Layout wrapper for authenticated routes
+│   ├── (auth)/                   # Route group for authentication pages
+│   │   ├── login/                # Login page route
+│   │   │   └── page.tsx          # Login page component
+│   │   ├── sign-up/              # Sign up page route
+│   │   │   └── page.tsx          # Sign up page component
+│   │   └── layout.tsx            # Layout wrapper for auth routes
+│   ├── api/                      # API routes directory
+│   │   └── auth/                 # Authentication API endpoints
+│   │       └── [...all]/         # Catch-all route for auth handlers
+│   │           └── route.ts       # Auth API route handler
+│   ├── layout.tsx                # Root layout component
+│   └── globals.css               # Global CSS styles
 │
-├── components/
-│   ├── features/
-│   │   ├── auth/
-│   │   │   ├── login-form.tsx
-│   │   │   └── signup-form.tsx
-│   │   └── dashboard/
-│   │       └── stats-card.tsx
-│   └── ui/
-│       ├── button.tsx
-│       ├── input.tsx
-│       └── card.tsx
+├── components/                   # React components directory
+│   ├── features/                 # Feature-specific components
+│   │   ├── auth/                 # Authentication-related components
+│   │   │   ├── login-form.tsx    # Login form component
+│   │   │   └── signup-form.tsx   # Sign up form component
+│   │   └── dashboard/            # Dashboard-related components
+│   │       └── stats-card.tsx    # Statistics card component
+│   └── ui/                       # Reusable UI components
+│       ├── button.tsx            # Button component
+│       ├── input.tsx             # Input component
+│       └── card.tsx              # Card component
 │
-├── lib/
-│   ├── auth.ts
-│   ├── auth-client.ts
-│   ├── utils.ts
-│   └── db.ts
+├── lib/                          # Utility libraries and helpers
+│   ├── auth.ts                   # Server-side auth utilities
+│   ├── auth-client.ts            # Client-side auth utilities
+│   ├── utils.ts                  # General utility functions
+│   └── db.ts                     # Database connection and utilities
 │
-└── db/
-    ├── index.ts
-    └── schema.ts
+└── db/                           # Database configuration
+    ├── index.ts                  # Database client initialization
+    └── schema.ts                 # Database schema definitions
 ```
 
 **Characteristics:**
@@ -69,99 +69,99 @@ Suitable for growing applications with multiple features and moderate complexity
 
 ```
 src/
-├── app/
-│   ├── (app)/
-│   │   ├── dashboard/
-│   │   ├── goals/
-│   │   │   ├── page.tsx
-│   │   │   └── [id]/
-│   │   │       └── page.tsx
-│   │   ├── settings/
-│   │   └── layout.tsx
-│   ├── (auth)/
-│   │   ├── login/
-│   │   ├── sign-up/
-│   │   ├── forgot-password/
-│   │   └── layout.tsx
-│   ├── (marketing)/
-│   │   ├── page.tsx
-│   │   └── layout.tsx
-│   ├── api/
-│   │   ├── auth/
-│   │   ├── goals/
-│   │   │   ├── route.ts
-│   │   │   └── [id]/
-│   │   │       └── route.ts
-│   │   └── users/
-│   │       └── route.ts
-│   ├── layout.tsx
-│   └── globals.css
+├── app/                          # Next.js App Router directory
+│   ├── (app)/                    # Route group for authenticated app pages
+│   │   ├── dashboard/            # Dashboard page route
+│   │   ├── goals/                # Goals feature routes
+│   │   │   ├── page.tsx          # Goals list page
+│   │   │   └── [id]/            # Dynamic route for individual goal
+│   │   │       └── page.tsx      # Goal detail page
+│   │   ├── settings/             # Settings page route
+│   │   └── layout.tsx            # Layout for authenticated routes
+│   ├── (auth)/                   # Route group for authentication pages
+│   │   ├── login/                # Login page route
+│   │   ├── sign-up/              # Sign up page route
+│   │   ├── forgot-password/      # Password recovery page route
+│   │   └── layout.tsx            # Layout for auth routes
+│   ├── (marketing)/              # Route group for public marketing pages
+│   │   ├── page.tsx              # Home/landing page
+│   │   └── layout.tsx            # Layout for marketing pages
+│   ├── api/                      # API routes directory
+│   │   ├── auth/                 # Authentication API endpoints
+│   │   ├── goals/                # Goals API endpoints
+│   │   │   ├── route.ts          # Goals CRUD operations
+│   │   │   └── [id]/            # Dynamic route for goal operations
+│   │   │       └── route.ts      # Individual goal API handler
+│   │   └── users/                # Users API endpoints
+│   │       └── route.ts          # Users API handler
+│   ├── layout.tsx                # Root layout component
+│   └── globals.css               # Global CSS styles
 │
-├── components/
-│   ├── features/
-│   │   ├── auth/
-│   │   │   ├── login-form.tsx
-│   │   │   ├── signup-form.tsx
-│   │   │   └── forgot-password-form.tsx
-│   │   ├── goals/
-│   │   │   ├── goal-card.tsx
-│   │   │   ├── goal-list.tsx
-│   │   │   └── goal-form.tsx
-│   │   └── dashboard/
-│   │       ├── stats-card.tsx
-│   │       └── recent-activity.tsx
-│   ├── layout/
-│   │   ├── app/
-│   │   │   ├── sidebar.tsx
-│   │   │   └── header.tsx
-│   │   ├── auth/
-│   │   │   └── auth-container.tsx
-│   │   └── marketing/
-│   │       ├── navbar.tsx
-│   │       └── footer.tsx
-│   ├── shared/
-│   │   ├── loading.tsx
-│   │   ├── error-boundary.tsx
-│   │   └── toast.tsx
-│   └── ui/
-│       ├── button.tsx
-│       ├── input.tsx
-│       ├── card.tsx
-│       └── dialog.tsx
+├── components/                   # React components directory
+│   ├── features/                 # Feature-specific components
+│   │   ├── auth/                 # Authentication components
+│   │   │   ├── login-form.tsx    # Login form component
+│   │   │   ├── signup-form.tsx   # Sign up form component
+│   │   │   └── forgot-password-form.tsx  # Password recovery form
+│   │   ├── goals/                # Goals feature components
+│   │   │   ├── goal-card.tsx     # Goal card display component
+│   │   │   ├── goal-list.tsx     # Goals list component
+│   │   │   └── goal-form.tsx     # Goal create/edit form
+│   │   └── dashboard/            # Dashboard components
+│   │       ├── stats-card.tsx    # Statistics card component
+│   │       └── recent-activity.tsx  # Recent activity feed
+│   ├── layout/                   # Layout components
+│   │   ├── app/                  # App layout components
+│   │   │   ├── sidebar.tsx       # Sidebar navigation
+│   │   │   └── header.tsx        # App header
+│   │   ├── auth/                 # Auth layout components
+│   │   │   └── auth-container.tsx  # Auth page container
+│   │   └── marketing/            # Marketing layout components
+│   │       ├── navbar.tsx        # Marketing navbar
+│   │       └── footer.tsx        # Marketing footer
+│   ├── shared/                   # Shared/common components
+│   │   ├── loading.tsx           # Loading spinner component
+│   │   ├── error-boundary.tsx    # Error boundary component
+│   │   └── toast.tsx             # Toast notification component
+│   └── ui/                       # Reusable UI primitives
+│       ├── button.tsx            # Button component
+│       ├── input.tsx             # Input component
+│       ├── card.tsx              # Card component
+│       └── dialog.tsx            # Dialog/modal component
 │
-├── lib/
-│   ├── auth.ts
-│   ├── auth-client.ts
-│   ├── utils.ts
-│   ├── constants.ts
-│   ├── validations/
-│   │   ├── auth.ts
-│   │   ├── goals.ts
-│   │   └── user.ts
-│   └── hooks/
-│       ├── use-auth.ts
-│       ├── use-goals.ts
-│       └── use-local-storage.ts
+├── lib/                          # Utility libraries and helpers
+│   ├── auth.ts                   # Server-side auth utilities
+│   ├── auth-client.ts            # Client-side auth utilities
+│   ├── utils.ts                  # General utility functions
+│   ├── constants.ts              # Application constants
+│   ├── validations/              # Validation schemas (Zod)
+│   │   ├── auth.ts               # Auth validation schemas
+│   │   ├── goals.ts              # Goals validation schemas
+│   │   └── user.ts               # User validation schemas
+│   └── hooks/                    # Custom React hooks
+│       ├── use-auth.ts           # Authentication hook
+│       ├── use-goals.ts          # Goals data hook
+│       └── use-local-storage.ts  # Local storage hook
 │
-├── services/
-│   ├── auth.service.ts
-│   ├── goals.service.ts
-│   └── api.service.ts
+├── services/                     # Business logic services layer
+│   ├── auth.service.ts          # Authentication service
+│   ├── goals.service.ts         # Goals business logic
+│   └── api.service.ts           # API client service
 │
-├── db/
-│   ├── index.ts
-│   ├── schema.ts
-│   └── migrations/
+├── db/                           # Database configuration
+│   ├── index.ts                 # Database client initialization
+│   ├── schema.ts                # Database schema definitions
+│   └── migrations/              # Database migration files
 │
-├── types/
-│   ├── index.ts
-│   ├── auth.ts
-│   ├── goals.ts
-│   └── api.ts
+├── types/                        # TypeScript type definitions
+│   ├── index.ts                 # Main type exports
+│   ├── auth.ts                  # Authentication types
+│   ├── goals.ts                 # Goals types
+│   └── api.ts                   # API response types
 │
-└── config/
-    ├── env.ts
-    └── site.ts
+└── config/                       # Configuration files
+    ├── env.ts                   # Environment variables config
+    └── site.ts                  # Site configuration
 ```
 
 **Characteristics:**
@@ -181,161 +181,161 @@ Designed for complex applications with multiple domains and teams.
 
 ```
 src/
-├── app/
-│   ├── (app)/
-│   │   ├── dashboard/
-│   │   ├── goals/
-│   │   │   ├── page.tsx
-│   │   │   ├── [id]/
-│   │   │   │   └── page.tsx
-│   │   │   └── new/
-│   │   │       └── page.tsx
-│   │   ├── settings/
-│   │   │   ├── profile/
-│   │   │   ├── preferences/
-│   │   │   └── security/
-│   │   ├── analytics/
-│   │   └── layout.tsx
-│   ├── (auth)/
-│   │   ├── login/
-│   │   ├── sign-up/
-│   │   ├── forgot-password/
-│   │   ├── reset-password/
-│   │   └── layout.tsx
-│   ├── (marketing)/
-│   │   ├── page.tsx
-│   │   ├── about/
-│   │   ├── pricing/
-│   │   └── layout.tsx
-│   ├── api/
-│   │   ├── auth/
-│   │   ├── goals/
-│   │   │   ├── route.ts
-│   │   │   └── [id]/
-│   │   │       └── route.ts
-│   │   ├── users/
-│   │   │   ├── route.ts
-│   │   │   └── [id]/
-│   │   │       └── route.ts
-│   │   └── analytics/
-│   │       └── route.ts
-│   ├── layout.tsx
-│   └── globals.css
+├── app/                          # Next.js App Router directory
+│   ├── (app)/                    # Route group for authenticated app pages
+│   │   ├── dashboard/            # Dashboard page route
+│   │   ├── goals/                # Goals feature routes
+│   │   │   ├── page.tsx          # Goals list page
+│   │   │   ├── [id]/            # Dynamic route for individual goal
+│   │   │   │   └── page.tsx      # Goal detail page
+│   │   │   └── new/              # Create new goal route
+│   │   │       └── page.tsx      # New goal form page
+│   │   ├── settings/             # Settings routes
+│   │   │   ├── profile/          # User profile settings
+│   │   │   ├── preferences/      # User preferences
+│   │   │   └── security/         # Security settings
+│   │   ├── analytics/            # Analytics page route
+│   │   └── layout.tsx            # Layout for authenticated routes
+│   ├── (auth)/                   # Route group for authentication pages
+│   │   ├── login/                # Login page route
+│   │   ├── sign-up/              # Sign up page route
+│   │   ├── forgot-password/      # Password recovery page
+│   │   ├── reset-password/       # Password reset page
+│   │   └── layout.tsx            # Layout for auth routes
+│   ├── (marketing)/              # Route group for public marketing pages
+│   │   ├── page.tsx              # Home/landing page
+│   │   ├── about/                # About page
+│   │   ├── pricing/              # Pricing page
+│   │   └── layout.tsx            # Layout for marketing pages
+│   ├── api/                      # API routes directory
+│   │   ├── auth/                 # Authentication API endpoints
+│   │   ├── goals/                # Goals API endpoints
+│   │   │   ├── route.ts          # Goals CRUD operations
+│   │   │   └── [id]/            # Dynamic route for goal operations
+│   │   │       └── route.ts      # Individual goal API handler
+│   │   ├── users/                # Users API endpoints
+│   │   │   ├── route.ts          # Users list/create
+│   │   │   └── [id]/            # Dynamic route for user operations
+│   │   │       └── route.ts      # Individual user API handler
+│   │   └── analytics/            # Analytics API endpoints
+│   │       └── route.ts          # Analytics data API
+│   ├── layout.tsx                # Root layout component
+│   └── globals.css               # Global CSS styles
 │
-├── components/
-│   ├── features/
-│   │   ├── auth/
-│   │   │   ├── login-form.tsx
-│   │   │   ├── signup-form.tsx
-│   │   │   ├── forgot-password-form.tsx
-│   │   │   └── reset-password-form.tsx
-│   │   ├── goals/
-│   │   │   ├── goal-card.tsx
-│   │   │   ├── goal-list.tsx
-│   │   │   ├── goal-form.tsx
-│   │   │   ├── goal-detail.tsx
-│   │   │   └── goal-filters.tsx
-│   │   ├── dashboard/
-│   │   │   ├── stats-card.tsx
-│   │   │   ├── recent-activity.tsx
-│   │   │   └── charts/
-│   │   │       ├── line-chart.tsx
-│   │   │       └── bar-chart.tsx
-│   │   └── analytics/
-│   │       ├── analytics-dashboard.tsx
-│   │       └── report-generator.tsx
-│   ├── layout/
-│   │   ├── app/
-│   │   │   ├── sidebar.tsx
-│   │   │   ├── header.tsx
-│   │   │   ├── navigation.tsx
-│   │   │   └── breadcrumbs.tsx
-│   │   ├── auth/
-│   │   │   └── auth-container.tsx
-│   │   └── marketing/
-│   │       ├── navbar.tsx
-│   │       ├── footer.tsx
-│   │       └── hero-section.tsx
-│   ├── shared/
-│   │   ├── loading.tsx
-│   │   ├── error-boundary.tsx
-│   │   ├── toast.tsx
-│   │   ├── modal.tsx
-│   │   ├── confirm-dialog.tsx
-│   │   └── pagination.tsx
-│   └── ui/
-│       ├── button.tsx
-│       ├── input.tsx
-│       ├── card.tsx
-│       ├── dialog.tsx
-│       ├── select.tsx
-│       ├── table.tsx
-│       └── tabs.tsx
+├── components/                   # React components directory
+│   ├── features/                 # Feature-specific components
+│   │   ├── auth/                 # Authentication components
+│   │   │   ├── login-form.tsx    # Login form component
+│   │   │   ├── signup-form.tsx   # Sign up form component
+│   │   │   ├── forgot-password-form.tsx  # Password recovery form
+│   │   │   └── reset-password-form.tsx   # Password reset form
+│   │   ├── goals/                # Goals feature components
+│   │   │   ├── goal-card.tsx     # Goal card display component
+│   │   │   ├── goal-list.tsx     # Goals list component
+│   │   │   ├── goal-form.tsx     # Goal create/edit form
+│   │   │   ├── goal-detail.tsx   # Goal detail view
+│   │   │   └── goal-filters.tsx  # Goal filtering component
+│   │   ├── dashboard/            # Dashboard components
+│   │   │   ├── stats-card.tsx    # Statistics card component
+│   │   │   ├── recent-activity.tsx  # Recent activity feed
+│   │   │   └── charts/           # Chart components
+│   │   │       ├── line-chart.tsx    # Line chart component
+│   │   │       └── bar-chart.tsx     # Bar chart component
+│   │   └── analytics/            # Analytics components
+│   │       ├── analytics-dashboard.tsx  # Analytics dashboard
+│   │       └── report-generator.tsx     # Report generation component
+│   ├── layout/                   # Layout components
+│   │   ├── app/                  # App layout components
+│   │   │   ├── sidebar.tsx       # Sidebar navigation
+│   │   │   ├── header.tsx        # App header
+│   │   │   ├── navigation.tsx   # Main navigation component
+│   │   │   └── breadcrumbs.tsx  # Breadcrumb navigation
+│   │   ├── auth/                 # Auth layout components
+│   │   │   └── auth-container.tsx  # Auth page container
+│   │   └── marketing/            # Marketing layout components
+│   │       ├── navbar.tsx        # Marketing navbar
+│   │       ├── footer.tsx        # Marketing footer
+│   │       └── hero-section.tsx  # Hero section component
+│   ├── shared/                   # Shared/common components
+│   │   ├── loading.tsx           # Loading spinner component
+│   │   ├── error-boundary.tsx    # Error boundary component
+│   │   ├── toast.tsx             # Toast notification component
+│   │   ├── modal.tsx             # Modal component
+│   │   ├── confirm-dialog.tsx    # Confirmation dialog
+│   │   └── pagination.tsx        # Pagination component
+│   └── ui/                       # Reusable UI primitives
+│       ├── button.tsx            # Button component
+│       ├── input.tsx             # Input component
+│       ├── card.tsx              # Card component
+│       ├── dialog.tsx            # Dialog/modal component
+│       ├── select.tsx            # Select dropdown component
+│       ├── table.tsx             # Table component
+│       └── tabs.tsx              # Tabs component
 │
-├── lib/
-│   ├── auth.ts
-│   ├── auth-client.ts
-│   ├── utils.ts
-│   ├── constants.ts
-│   ├── validations/
-│   │   ├── auth.ts
-│   │   ├── goals.ts
-│   │   ├── user.ts
-│   │   └── analytics.ts
-│   ├── hooks/
-│   │   ├── use-auth.ts
-│   │   ├── use-goals.ts
-│   │   ├── use-local-storage.ts
-│   │   ├── use-debounce.ts
-│   │   └── use-media-query.ts
-│   └── helpers/
-│       ├── formatters.ts
-│       ├── validators.ts
-│       └── date-utils.ts
+├── lib/                          # Utility libraries and helpers
+│   ├── auth.ts                   # Server-side auth utilities
+│   ├── auth-client.ts            # Client-side auth utilities
+│   ├── utils.ts                  # General utility functions
+│   ├── constants.ts              # Application constants
+│   ├── validations/              # Validation schemas (Zod)
+│   │   ├── auth.ts               # Auth validation schemas
+│   │   ├── goals.ts              # Goals validation schemas
+│   │   ├── user.ts               # User validation schemas
+│   │   └── analytics.ts          # Analytics validation schemas
+│   ├── hooks/                    # Custom React hooks
+│   │   ├── use-auth.ts           # Authentication hook
+│   │   ├── use-goals.ts          # Goals data hook
+│   │   ├── use-local-storage.ts  # Local storage hook
+│   │   ├── use-debounce.ts       # Debounce hook
+│   │   └── use-media-query.ts    # Media query hook
+│   └── helpers/                  # Helper utility functions
+│       ├── formatters.ts         # Data formatting utilities
+│       ├── validators.ts        # Additional validators
+│       └── date-utils.ts         # Date manipulation utilities
 │
-├── services/
-│   ├── auth.service.ts
-│   ├── goals.service.ts
-│   ├── users.service.ts
-│   ├── analytics.service.ts
-│   ├── api.service.ts
-│   ├── cache.service.ts
-│   └── storage.service.ts
+├── services/                     # Business logic services layer
+│   ├── auth.service.ts          # Authentication service
+│   ├── goals.service.ts         # Goals business logic
+│   ├── users.service.ts         # Users business logic
+│   ├── analytics.service.ts     # Analytics business logic
+│   ├── api.service.ts           # API client service
+│   ├── cache.service.ts         # Caching service
+│   └── storage.service.ts       # Storage service
 │
-├── stores/
-│   ├── auth-store.ts
-│   ├── goals-store.ts
-│   ├── ui-store.ts
-│   └── analytics-store.ts
+├── stores/                       # State management stores (Zustand/Redux)
+│   ├── auth-store.ts            # Authentication state store
+│   ├── goals-store.ts           # Goals state store
+│   ├── ui-store.ts              # UI state store
+│   └── analytics-store.ts       # Analytics state store
 │
-├── db/
-│   ├── index.ts
-│   ├── schema.ts
-│   ├── migrations/
-│   └── seeds/
+├── db/                           # Database configuration
+│   ├── index.ts                 # Database client initialization
+│   ├── schema.ts                # Database schema definitions
+│   ├── migrations/              # Database migration files
+│   └── seeds/                   # Database seed files
 │
-├── types/
-│   ├── index.ts
-│   ├── auth.ts
-│   ├── goals.ts
-│   ├── user.ts
-│   ├── api.ts
-│   └── analytics.ts
+├── types/                        # TypeScript type definitions
+│   ├── index.ts                 # Main type exports
+│   ├── auth.ts                  # Authentication types
+│   ├── goals.ts                 # Goals types
+│   ├── user.ts                  # User types
+│   ├── api.ts                   # API response types
+│   └── analytics.ts             # Analytics types
 │
-├── hooks/
-│   ├── use-auth.ts
-│   ├── use-goals.ts
-│   ├── use-theme.ts
-│   └── use-analytics.ts
+├── hooks/                        # Top-level custom hooks
+│   ├── use-auth.ts              # Authentication hook
+│   ├── use-goals.ts             # Goals data hook
+│   ├── use-theme.ts             # Theme management hook
+│   └── use-analytics.ts         # Analytics hook
 │
-├── config/
-│   ├── env.ts
-│   ├── site.ts
-│   └── constants.ts
+├── config/                       # Configuration files
+│   ├── env.ts                   # Environment variables config
+│   ├── site.ts                  # Site configuration
+│   └── constants.ts             # Application constants
 │
-└── styles/
-    ├── globals.css
-    └── themes.css
+└── styles/                       # Global styles
+    ├── globals.css              # Global CSS styles
+    └── themes.css               # Theme CSS variables
 ```
 
 **Characteristics:**
@@ -355,282 +355,282 @@ For large-scale applications with multiple teams, domains, and complex business 
 
 ```
 src/
-├── app/
-│   ├── (app)/
-│   │   ├── dashboard/
-│   │   ├── goals/
-│   │   │   ├── page.tsx
-│   │   │   ├── [id]/
-│   │   │   │   └── page.tsx
-│   │   │   ├── new/
-│   │   │   │   └── page.tsx
-│   │   │   └── templates/
-│   │   │       └── page.tsx
-│   │   ├── settings/
-│   │   │   ├── profile/
-│   │   │   ├── preferences/
-│   │   │   ├── security/
-│   │   │   └── integrations/
-│   │   ├── analytics/
-│   │   │   ├── overview/
-│   │   │   ├── reports/
-│   │   │   └── exports/
-│   │   ├── teams/
-│   │   │   ├── page.tsx
-│   │   │   └── [id]/
-│   │   │       └── page.tsx
-│   │   └── layout.tsx
-│   ├── (auth)/
-│   │   ├── login/
-│   │   ├── sign-up/
-│   │   ├── forgot-password/
-│   │   ├── reset-password/
-│   │   ├── verify-email/
-│   │   └── layout.tsx
-│   ├── (marketing)/
-│   │   ├── page.tsx
-│   │   ├── about/
-│   │   ├── pricing/
-│   │   ├── blog/
-│   │   │   ├── page.tsx
-│   │   │   └── [slug]/
-│   │   │       └── page.tsx
-│   │   └── layout.tsx
-│   ├── api/
-│   │   ├── auth/
-│   │   ├── goals/
-│   │   │   ├── route.ts
-│   │   │   ├── [id]/
-│   │   │   │   └── route.ts
-│   │   │   └── templates/
-│   │   │       └── route.ts
-│   │   ├── users/
-│   │   │   ├── route.ts
-│   │   │   └── [id]/
-│   │   │       └── route.ts
-│   │   ├── teams/
-│   │   │   ├── route.ts
-│   │   │   └── [id]/
-│   │   │       └── route.ts
-│   │   ├── analytics/
-│   │   │   ├── route.ts
-│   │   │   └── export/
-│   │   │       └── route.ts
-│   │   └── webhooks/
-│   │       └── route.ts
-│   ├── layout.tsx
-│   └── globals.css
+├── app/                          # Next.js App Router directory
+│   ├── (app)/                    # Route group for authenticated app pages
+│   │   ├── dashboard/            # Dashboard page route
+│   │   ├── goals/                # Goals feature routes
+│   │   │   ├── page.tsx          # Goals list page
+│   │   │   ├── [id]/            # Dynamic route for individual goal
+│   │   │   │   └── page.tsx      # Goal detail page
+│   │   │   ├── new/              # Create new goal route
+│   │   │   │   └── page.tsx      # New goal form page
+│   │   │   └── templates/        # Goal templates route
+│   │   │       └── page.tsx      # Goal templates page
+│   │   ├── settings/             # Settings routes
+│   │   │   ├── profile/          # User profile settings
+│   │   │   ├── preferences/      # User preferences
+│   │   │   ├── security/         # Security settings
+│   │   │   └── integrations/     # Third-party integrations
+│   │   ├── analytics/            # Analytics routes
+│   │   │   ├── overview/         # Analytics overview page
+│   │   │   ├── reports/          # Reports page
+│   │   │   └── exports/          # Data exports page
+│   │   ├── teams/                # Teams feature routes
+│   │   │   ├── page.tsx          # Teams list page
+│   │   │   └── [id]/            # Dynamic route for team
+│   │   │       └── page.tsx      # Team detail page
+│   │   └── layout.tsx            # Layout for authenticated routes
+│   ├── (auth)/                   # Route group for authentication pages
+│   │   ├── login/                # Login page route
+│   │   ├── sign-up/              # Sign up page route
+│   │   ├── forgot-password/      # Password recovery page
+│   │   ├── reset-password/       # Password reset page
+│   │   ├── verify-email/         # Email verification page
+│   │   └── layout.tsx            # Layout for auth routes
+│   ├── (marketing)/              # Route group for public marketing pages
+│   │   ├── page.tsx              # Home/landing page
+│   │   ├── about/                # About page
+│   │   ├── pricing/              # Pricing page
+│   │   ├── blog/                 # Blog routes
+│   │   │   ├── page.tsx          # Blog list page
+│   │   │   └── [slug]/          # Dynamic route for blog post
+│   │   │       └── page.tsx      # Blog post detail page
+│   │   └── layout.tsx            # Layout for marketing pages
+│   ├── api/                      # API routes directory
+│   │   ├── auth/                 # Authentication API endpoints
+│   │   ├── goals/                # Goals API endpoints
+│   │   │   ├── route.ts          # Goals CRUD operations
+│   │   │   ├── [id]/            # Dynamic route for goal operations
+│   │   │   │   └── route.ts      # Individual goal API handler
+│   │   │   └── templates/        # Goal templates API
+│   │   │       └── route.ts      # Templates API handler
+│   │   ├── users/                # Users API endpoints
+│   │   │   ├── route.ts          # Users list/create
+│   │   │   └── [id]/            # Dynamic route for user operations
+│   │   │       └── route.ts      # Individual user API handler
+│   │   ├── teams/                # Teams API endpoints
+│   │   │   ├── route.ts          # Teams list/create
+│   │   │   └── [id]/            # Dynamic route for team operations
+│   │   │       └── route.ts      # Individual team API handler
+│   │   ├── analytics/            # Analytics API endpoints
+│   │   │   ├── route.ts          # Analytics data API
+│   │   │   └── export/           # Analytics export API
+│   │   │       └── route.ts      # Export data handler
+│   │   └── webhooks/             # Webhook endpoints
+│   │       └── route.ts          # Webhook handler
+│   ├── layout.tsx                # Root layout component
+│   └── globals.css               # Global CSS styles
 │
-├── components/
-│   ├── features/
-│   │   ├── auth/
-│   │   │   ├── login-form.tsx
-│   │   │   ├── signup-form.tsx
-│   │   │   ├── forgot-password-form.tsx
-│   │   │   ├── reset-password-form.tsx
-│   │   │   └── verify-email-form.tsx
-│   │   ├── goals/
-│   │   │   ├── goal-card.tsx
-│   │   │   ├── goal-list.tsx
-│   │   │   ├── goal-form.tsx
-│   │   │   ├── goal-detail.tsx
-│   │   │   ├── goal-filters.tsx
-│   │   │   ├── goal-templates/
-│   │   │   │   ├── template-card.tsx
-│   │   │   │   └── template-selector.tsx
-│   │   │   └── goal-analytics/
-│   │   │       └── goal-progress.tsx
-│   │   ├── dashboard/
-│   │   │   ├── stats-card.tsx
-│   │   │   ├── recent-activity.tsx
-│   │   │   ├── charts/
-│   │   │   │   ├── line-chart.tsx
-│   │   │   │   ├── bar-chart.tsx
-│   │   │   │   └── pie-chart.tsx
-│   │   │   └── widgets/
-│   │   │       ├── quick-actions.tsx
-│   │   │       └── notifications.tsx
-│   │   ├── analytics/
-│   │   │   ├── analytics-dashboard.tsx
-│   │   │   ├── report-generator.tsx
-│   │   │   ├── data-export.tsx
-│   │   │   └── filters/
-│   │   │       ├── date-range-picker.tsx
-│   │   │       └── metric-selector.tsx
-│   │   └── teams/
-│   │       ├── team-card.tsx
-│   │       ├── team-list.tsx
-│   │       ├── team-form.tsx
-│   │       └── team-members/
-│   │           ├── member-list.tsx
-│   │           └── member-invite.tsx
-│   ├── layout/
-│   │   ├── app/
-│   │   │   ├── sidebar/
-│   │   │   │   ├── sidebar.tsx
-│   │   │   │   ├── sidebar-nav.tsx
-│   │   │   │   └── sidebar-footer.tsx
-│   │   │   ├── header/
-│   │   │   │   ├── header.tsx
-│   │   │   │   ├── user-menu.tsx
-│   │   │   │   └── notifications.tsx
-│   │   │   ├── navigation/
-│   │   │   │   └── main-nav.tsx
-│   │   │   └── breadcrumbs.tsx
-│   │   ├── auth/
-│   │   │   └── auth-container.tsx
-│   │   └── marketing/
-│   │       ├── navbar.tsx
-│   │       ├── footer.tsx
-│   │       └── hero-section.tsx
-│   ├── shared/
-│   │   ├── loading/
-│   │   │   ├── loading.tsx
-│   │   │   └── skeleton.tsx
-│   │   ├── error-boundary.tsx
-│   │   ├── toast/
-│   │   │   ├── toast.tsx
-│   │   │   └── toast-provider.tsx
-│   │   ├── modal/
-│   │   │   ├── modal.tsx
-│   │   │   └── confirm-dialog.tsx
-│   │   ├── pagination.tsx
-│   │   └── empty-state.tsx
-│   └── ui/
-│       ├── button.tsx
-│       ├── input.tsx
-│       ├── card.tsx
-│       ├── dialog.tsx
-│       ├── select.tsx
-│       ├── table.tsx
-│       ├── tabs.tsx
-│       ├── dropdown-menu.tsx
-│       ├── tooltip.tsx
-│       └── popover.tsx
+├── components/                   # React components directory
+│   ├── features/                 # Feature-specific components
+│   │   ├── auth/                 # Authentication components
+│   │   │   ├── login-form.tsx    # Login form component
+│   │   │   ├── signup-form.tsx   # Sign up form component
+│   │   │   ├── forgot-password-form.tsx  # Password recovery form
+│   │   │   ├── reset-password-form.tsx   # Password reset form
+│   │   │   └── verify-email-form.tsx     # Email verification form
+│   │   ├── goals/                # Goals feature components
+│   │   │   ├── goal-card.tsx     # Goal card display component
+│   │   │   ├── goal-list.tsx     # Goals list component
+│   │   │   ├── goal-form.tsx     # Goal create/edit form
+│   │   │   ├── goal-detail.tsx   # Goal detail view
+│   │   │   ├── goal-filters.tsx  # Goal filtering component
+│   │   │   ├── goal-templates/    # Goal template components
+│   │   │   │   ├── template-card.tsx      # Template card
+│   │   │   │   └── template-selector.tsx   # Template selector
+│   │   │   └── goal-analytics/    # Goal analytics components
+│   │   │       └── goal-progress.tsx      # Goal progress tracker
+│   │   ├── dashboard/            # Dashboard components
+│   │   │   ├── stats-card.tsx    # Statistics card component
+│   │   │   ├── recent-activity.tsx  # Recent activity feed
+│   │   │   ├── charts/           # Chart components
+│   │   │   │   ├── line-chart.tsx    # Line chart component
+│   │   │   │   ├── bar-chart.tsx     # Bar chart component
+│   │   │   │   └── pie-chart.tsx     # Pie chart component
+│   │   │   └── widgets/          # Dashboard widgets
+│   │   │       ├── quick-actions.tsx    # Quick actions widget
+│   │   │       └── notifications.tsx     # Notifications widget
+│   │   ├── analytics/            # Analytics components
+│   │   │   ├── analytics-dashboard.tsx  # Analytics dashboard
+│   │   │   ├── report-generator.tsx     # Report generation component
+│   │   │   ├── data-export.tsx          # Data export component
+│   │   │   └── filters/                 # Analytics filter components
+│   │   │       ├── date-range-picker.tsx # Date range picker
+│   │   │       └── metric-selector.tsx   # Metric selector
+│   │   └── teams/                # Teams feature components
+│   │       ├── team-card.tsx     # Team card component
+│   │       ├── team-list.tsx     # Teams list component
+│   │       ├── team-form.tsx    # Team create/edit form
+│   │       └── team-members/     # Team member components
+│   │           ├── member-list.tsx    # Member list
+│   │           └── member-invite.tsx  # Member invitation
+│   ├── layout/                   # Layout components
+│   │   ├── app/                  # App layout components
+│   │   │   ├── sidebar/          # Sidebar components
+│   │   │   │   ├── sidebar.tsx       # Main sidebar
+│   │   │   │   ├── sidebar-nav.tsx   # Sidebar navigation
+│   │   │   │   └── sidebar-footer.tsx # Sidebar footer
+│   │   │   ├── header/            # Header components
+│   │   │   │   ├── header.tsx         # Main header
+│   │   │   │   ├── user-menu.tsx     # User menu dropdown
+│   │   │   │   └── notifications.tsx  # Notifications component
+│   │   │   ├── navigation/       # Navigation components
+│   │   │   │   └── main-nav.tsx      # Main navigation
+│   │   │   └── breadcrumbs.tsx   # Breadcrumb navigation
+│   │   ├── auth/                 # Auth layout components
+│   │   │   └── auth-container.tsx  # Auth page container
+│   │   └── marketing/            # Marketing layout components
+│   │       ├── navbar.tsx        # Marketing navbar
+│   │       ├── footer.tsx        # Marketing footer
+│   │       └── hero-section.tsx  # Hero section component
+│   ├── shared/                   # Shared/common components
+│   │   ├── loading/              # Loading components
+│   │   │   ├── loading.tsx       # Loading spinner
+│   │   │   └── skeleton.tsx     # Skeleton loader
+│   │   ├── error-boundary.tsx    # Error boundary component
+│   │   ├── toast/                # Toast notification components
+│   │   │   ├── toast.tsx         # Toast component
+│   │   │   └── toast-provider.tsx # Toast provider
+│   │   ├── modal/                # Modal components
+│   │   │   ├── modal.tsx         # Modal component
+│   │   │   └── confirm-dialog.tsx # Confirmation dialog
+│   │   ├── pagination.tsx        # Pagination component
+│   │   └── empty-state.tsx       # Empty state component
+│   └── ui/                       # Reusable UI primitives
+│       ├── button.tsx            # Button component
+│       ├── input.tsx             # Input component
+│       ├── card.tsx              # Card component
+│       ├── dialog.tsx            # Dialog/modal component
+│       ├── select.tsx            # Select dropdown component
+│       ├── table.tsx             # Table component
+│       ├── tabs.tsx              # Tabs component
+│       ├── dropdown-menu.tsx     # Dropdown menu component
+│       ├── tooltip.tsx           # Tooltip component
+│       └── popover.tsx           # Popover component
 │
-├── lib/
-│   ├── auth.ts
-│   ├── auth-client.ts
-│   ├── utils.ts
-│   ├── constants.ts
-│   ├── validations/
-│   │   ├── auth.ts
-│   │   ├── goals.ts
-│   │   ├── user.ts
-│   │   ├── teams.ts
-│   │   └── analytics.ts
-│   ├── hooks/
-│   │   ├── use-auth.ts
-│   │   ├── use-goals.ts
-│   │   ├── use-local-storage.ts
-│   │   ├── use-debounce.ts
-│   │   ├── use-media-query.ts
-│   │   ├── use-intersection.ts
-│   │   └── use-keyboard-shortcut.ts
-│   ├── helpers/
-│   │   ├── formatters.ts
-│   │   ├── validators.ts
-│   │   ├── date-utils.ts
-│   │   └── string-utils.ts
-│   └── middleware/
-│       ├── rate-limiter.ts
-│       └── request-validator.ts
+├── lib/                          # Utility libraries and helpers
+│   ├── auth.ts                   # Server-side auth utilities
+│   ├── auth-client.ts            # Client-side auth utilities
+│   ├── utils.ts                  # General utility functions
+│   ├── constants.ts              # Application constants
+│   ├── validations/              # Validation schemas (Zod)
+│   │   ├── auth.ts               # Auth validation schemas
+│   │   ├── goals.ts              # Goals validation schemas
+│   │   ├── user.ts               # User validation schemas
+│   │   ├── teams.ts              # Teams validation schemas
+│   │   └── analytics.ts          # Analytics validation schemas
+│   ├── hooks/                    # Custom React hooks
+│   │   ├── use-auth.ts           # Authentication hook
+│   │   ├── use-goals.ts          # Goals data hook
+│   │   ├── use-local-storage.ts  # Local storage hook
+│   │   ├── use-debounce.ts       # Debounce hook
+│   │   ├── use-media-query.ts    # Media query hook
+│   │   ├── use-intersection.ts  # Intersection observer hook
+│   │   └── use-keyboard-shortcut.ts # Keyboard shortcut hook
+│   ├── helpers/                  # Helper utility functions
+│   │   ├── formatters.ts         # Data formatting utilities
+│   │   ├── validators.ts         # Additional validators
+│   │   ├── date-utils.ts         # Date manipulation utilities
+│   │   └── string-utils.ts       # String manipulation utilities
+│   └── middleware/               # Request middleware utilities
+│       ├── rate-limiter.ts       # Rate limiting middleware
+│       └── request-validator.ts  # Request validation middleware
 │
-├── services/
-│   ├── auth/
-│   │   ├── auth.service.ts
-│   │   └── session.service.ts
-│   ├── goals/
-│   │   ├── goals.service.ts
-│   │   └── templates.service.ts
-│   ├── users/
-│   │   └── users.service.ts
-│   ├── teams/
-│   │   └── teams.service.ts
-│   ├── analytics/
-│   │   ├── analytics.service.ts
-│   │   └── reports.service.ts
-│   ├── api/
-│   │   ├── api.service.ts
-│   │   ├── http-client.ts
-│   │   └── error-handler.ts
-│   ├── cache/
-│   │   ├── cache.service.ts
-│   │   └── cache-strategies.ts
-│   ├── storage/
-│   │   ├── storage.service.ts
-│   │   └── file-upload.service.ts
-│   └── notifications/
-│       └── notification.service.ts
+├── services/                     # Business logic services layer (domain-organized)
+│   ├── auth/                     # Authentication services
+│   │   ├── auth.service.ts      # Authentication service
+│   │   └── session.service.ts   # Session management service
+│   ├── goals/                    # Goals services
+│   │   ├── goals.service.ts     # Goals business logic
+│   │   └── templates.service.ts # Goal templates service
+│   ├── users/                    # Users services
+│   │   └── users.service.ts     # Users business logic
+│   ├── teams/                    # Teams services
+│   │   └── teams.service.ts     # Teams business logic
+│   ├── analytics/                # Analytics services
+│   │   ├── analytics.service.ts # Analytics business logic
+│   │   └── reports.service.ts   # Reports generation service
+│   ├── api/                      # API services
+│   │   ├── api.service.ts       # Main API client
+│   │   ├── http-client.ts       # HTTP client wrapper
+│   │   └── error-handler.ts     # Error handling service
+│   ├── cache/                    # Caching services
+│   │   ├── cache.service.ts     # Cache service
+│   │   └── cache-strategies.ts  # Cache strategy implementations
+│   ├── storage/                  # Storage services
+│   │   ├── storage.service.ts   # Storage service
+│   │   └── file-upload.service.ts # File upload service
+│   └── notifications/            # Notification services
+│       └── notification.service.ts # Notification service
 │
-├── stores/
-│   ├── auth/
-│   │   ├── auth-store.ts
-│   │   └── session-store.ts
-│   ├── goals/
-│   │   ├── goals-store.ts
-│   │   └── templates-store.ts
-│   ├── ui/
-│   │   ├── ui-store.ts
-│   │   ├── theme-store.ts
-│   │   └── sidebar-store.ts
-│   └── analytics/
-│       └── analytics-store.ts
+├── stores/                       # State management stores (domain-organized)
+│   ├── auth/                     # Authentication stores
+│   │   ├── auth-store.ts        # Authentication state store
+│   │   └── session-store.ts     # Session state store
+│   ├── goals/                    # Goals stores
+│   │   ├── goals-store.ts       # Goals state store
+│   │   └── templates-store.ts   # Templates state store
+│   ├── ui/                       # UI stores
+│   │   ├── ui-store.ts          # General UI state
+│   │   ├── theme-store.ts       # Theme state store
+│   │   └── sidebar-store.ts     # Sidebar state store
+│   └── analytics/                # Analytics stores
+│       └── analytics-store.ts   # Analytics state store
 │
-├── db/
-│   ├── index.ts
-│   ├── schema/
-│   │   ├── auth.ts
-│   │   ├── goals.ts
-│   │   ├── users.ts
-│   │   ├── teams.ts
-│   │   └── analytics.ts
-│   ├── migrations/
-│   ├── seeds/
-│   └── queries/
-│       ├── goals.queries.ts
-│       └── users.queries.ts
+├── db/                           # Database configuration
+│   ├── index.ts                 # Database client initialization
+│   ├── schema/                   # Modular schema definitions
+│   │   ├── auth.ts              # Authentication schema
+│   │   ├── goals.ts             # Goals schema
+│   │   ├── users.ts             # Users schema
+│   │   ├── teams.ts             # Teams schema
+│   │   └── analytics.ts         # Analytics schema
+│   ├── migrations/              # Database migration files
+│   ├── seeds/                   # Database seed files
+│   └── queries/                 # Database query functions
+│       ├── goals.queries.ts     # Goals queries
+│       └── users.queries.ts     # Users queries
 │
-├── types/
-│   ├── index.ts
-│   ├── auth.ts
-│   ├── goals.ts
-│   ├── user.ts
-│   ├── teams.ts
-│   ├── api.ts
-│   ├── analytics.ts
-│   └── common.ts
+├── types/                        # TypeScript type definitions
+│   ├── index.ts                 # Main type exports
+│   ├── auth.ts                  # Authentication types
+│   ├── goals.ts                 # Goals types
+│   ├── user.ts                  # User types
+│   ├── teams.ts                 # Teams types
+│   ├── api.ts                   # API response types
+│   ├── analytics.ts             # Analytics types
+│   └── common.ts                # Common/shared types
 │
-├── hooks/
-│   ├── use-auth.ts
-│   ├── use-goals.ts
-│   ├── use-theme.ts
-│   ├── use-analytics.ts
-│   └── use-teams.ts
+├── hooks/                        # Top-level custom hooks
+│   ├── use-auth.ts              # Authentication hook
+│   ├── use-goals.ts             # Goals data hook
+│   ├── use-theme.ts             # Theme management hook
+│   ├── use-analytics.ts         # Analytics hook
+│   └── use-teams.ts             # Teams hook
 │
-├── config/
-│   ├── env.ts
-│   ├── site.ts
-│   ├── constants.ts
-│   └── feature-flags.ts
+├── config/                       # Configuration files
+│   ├── env.ts                   # Environment variables config
+│   ├── site.ts                  # Site configuration
+│   ├── constants.ts             # Application constants
+│   └── feature-flags.ts         # Feature flags configuration
 │
-├── middleware/
-│   ├── auth.middleware.ts
-│   ├── rate-limit.middleware.ts
-│   └── logging.middleware.ts
+├── middleware/                   # Next.js middleware
+│   ├── auth.middleware.ts       # Authentication middleware
+│   ├── rate-limit.middleware.ts # Rate limiting middleware
+│   └── logging.middleware.ts    # Logging middleware
 │
-├── styles/
-│   ├── globals.css
-│   ├── themes/
-│   │   ├── light.css
-│   │   └── dark.css
-│   └── components/
-│       └── custom-components.css
+├── styles/                       # Global styles
+│   ├── globals.css              # Global CSS styles
+│   ├── themes/                  # Theme styles
+│   │   ├── light.css            # Light theme
+│   │   └── dark.css             # Dark theme
+│   └── components/              # Component-specific styles
+│       └── custom-components.css # Custom component styles
 │
-└── tests/
-    ├── unit/
-    ├── integration/
-    └── e2e/
+└── tests/                        # Test files
+    ├── unit/                     # Unit tests
+    ├── integration/              # Integration tests
+    └── e2e/                      # End-to-end tests
 ```
 
 **Characteristics:**
